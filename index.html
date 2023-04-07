@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport"
+    content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover" />
+  <title>Medileen Shopping Cart</title>
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.js" charset="utf-8"></script>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+  <div class="shopping-cart">
+    <!-- Title -->
+    <div class="title">Shopping Bag</div>
+
+    <!-- Product #1 -->
+    <div class="item">
+      <div class="image">
+        <img width="58" id="productImage1" alt="" />
+      </div>
+
+      <div class="description">
+        <span id="productName01"></span>
+        <span></span>
+        <span>฿ 2,750.00</span>
+      </div>
+
+      <div class="quantity">
+        <button class="plus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+        </button>
+        <input type="text" name="quantity1" value="0" min="0" onchange="calculatePrice()" />
+        <button class="minus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="total-price">฿ <span id="price1">0</span></div>
+    </div>
+
+    <!-- Product #2 -->
+    <div class="item">
+      <div class="image">
+        <img width="58" id="productImage2" alt="" />
+      </div>
+
+      <div class="description">
+        <span id="productName02"></span>
+        <span></span>
+        <span>฿ 1,450.00</span>
+      </div>
+
+      <div class="quantity">
+        <button class="plus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+        </button>
+        <input type="text" name="quantity2" value="0" min="0" onchange="calculatePrice()" />
+        <button class="minus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="total-price">฿ <span id="price2">0</span></div>
+    </div>
+
+    <!-- Product #3 -->
+    <div class="item">
+      <div class="image">
+        <img width="58" id="productImage3" alt="" />
+      </div>
+
+      <div class="description">
+        <span id="productName03"></span>
+        <span></span>
+        <span>฿ 1,950.00</span>
+      </div>
+
+      <div class="quantity">
+        <button class="plus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+        </button>
+        <input type="text" name="quantity3" value="0" min="0" onchange="calculatePrice()" />
+        <button class="minus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="total-price">฿ <span id="price3">0</span></div>
+    </div>
+
+    <!-- Product #4 -->
+    <div class="item">
+      <div class="image">
+        <img width="58" id="productImage4" alt="" />
+      </div>
+
+      <div class="description">
+        <span id="productName04"></span>
+        <span></span>
+        <span>฿ 1,450.00</span>
+      </div>
+
+      <div class="quantity">
+        <button class="plus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+        </button>
+        <input type="text" name="quantity4" value="0" min="0" onchange="calculatePrice()" />
+        <button class="minus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="total-price">฿ <span id="price4">0</span></div>
+    </div>
+
+    <!-- Product #5 -->
+    <div class="item">
+      <div class="image">
+        <img width="58" id="productImage5" alt="" />
+      </div>
+
+      <div class="description">
+        <span id="productName05"></span>
+        <span></span>
+        <span>฿ 1,750.00</span>
+      </div>
+
+      <div class="quantity">
+        <button class="plus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+        </button>
+        <input type="text" name="quantity5" value="0" min="0" onchange="calculatePrice()" />
+        <button class="minus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="total-price">฿ <span id="price5">0</span></div>
+    </div>
+
+    <!-- Product #6 -->
+    <div class="item">
+      <div class="image">
+        <img width="58" id="productImage6" alt="" />
+      </div>
+
+      <div class="description">
+        <span id="productName06"></span>
+        <span></span>
+        <span>฿ 750.00</span>
+      </div>
+
+      <div class="quantity">
+        <button class="plus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+        </button>
+        <input type="text" name="quantity6" value="0" min="0" onchange="calculatePrice()" />
+        <button class="minus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="total-price">฿ <span id="price6">0</span></div>
+    </div>
+
+    <!-- Product #7 -->
+    <div class="item">
+      <div class="image">
+        <img width="58" id="productImage7" alt="" />
+      </div>
+
+      <div class="description">
+        <span id="productName07"></span>
+        <span></span>
+        <span>฿ 1,050.00</span>
+      </div>
+
+      <div class="quantity">
+        <button class="plus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+        </button>
+        <input type="text" name="quantity7" value="0" min="0" onchange="calculatePrice()" />
+        <button class="minus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="total-price">฿ <span id="price7">0</span></div>
+    </div>
+
+    <!-- Product #8 -->
+    <div class="item">
+      <div class="image">
+        <img width="58" id="productImage8" alt="" />
+      </div>
+
+      <div class="description">
+        <span id="productName08"></span>
+        <span></span>
+        <span>฿ 800.00</span>
+      </div>
+
+      <div class="quantity">
+        <button class="plus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+        </button>
+        <input type="text" name="quantity8" value="0" min="0" onchange="calculatePrice()" />
+        <button class="minus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="total-price">฿ <span id="price8">0</span></div>
+    </div>
+
+    <!-- Product #9 -->
+    <div class="item">
+      <div class="image">
+        <img width="58" id="productImage9" alt="" />
+      </div>
+
+      <div class="description">
+        <span id="productName09"></span>
+        <span></span>
+        <span>฿ 850.00</span>
+      </div>
+
+      <div class="quantity">
+        <button class="plus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+        </button>
+        <input type="text" name="quantity9" value="0" min="0" onchange="calculatePrice()" />
+        <button class="minus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="total-price">฿ <span id="price9">0</span></div>
+    </div>
+
+    <!-- Product #10 -->
+    <div class="item">
+      <div class="image">
+        <img width="58" id="productImage10" alt="" />
+      </div>
+
+      <div class="description">
+        <span id="productName10"></span>
+        <span></span>
+        <span>฿ 1,756.00</span>
+      </div>
+
+      <div class="quantity">
+        <button class="plus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+        </button>
+        <input type="text" name="quantity10" value="0" min="0" onchange="calculatePrice()" />
+        <button class="minus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="total-price">฿ <span id="price10">0</span></div>
+    </div>
+
+    <!-- Product #11 -->
+    <div class="item">
+      <div class="image">
+        <img width="58" id="productImage11" alt="" />
+      </div>
+
+      <div class="description">
+        <span id="productName11"></span>
+        <span></span>
+        <span>฿ 1,050.00</span>
+      </div>
+
+      <div class="quantity">
+        <button class="plus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+        </button>
+        <input type="text" name="quantity11" value="0" min="0" onchange="calculatePrice()" />
+        <button class="minus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="total-price">฿ <span id="price11">0</span></div>
+    </div>
+
+    <!-- Product #12 -->
+    <div class="item">
+      <div class="image">
+        <img width="58" id="productImage12" alt="" />
+      </div>
+
+      <div class="description">
+        <span id="productName12"></span>
+        <span></span>
+        <span>฿ 1,050.00</span>
+      </div>
+
+      <div class="quantity">
+        <button class="plus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/plus.svg" alt="" />
+        </button>
+        <input type="text" name="quantity12" value="0" min="0" onchange="calculatePrice()" />
+        <button class="minus-btn" type="button" name="button">
+          <img src="https://designmodo.com/demo/shopping-cart/minus.svg" alt="" />
+        </button>
+      </div>
+
+      <div class="total-price">฿ <span id="price12">0</span></div>
+    </div>
+
+    <!-- Check Out -->
+    <div class="item">
+      <div class="titlep">
+        Total Price <span id="totalPrice">0</span> Baht
+      </div>
+
+      <div class="titlep">
+        Member -5% <span id="memberPrice">0</span> Baht
+      </div>
+    </div>
+
+    <section id="button">
+      <button class="button-buy" id="btnSend" type="submit">Buy</button>
+      <!-- ... -->
+      <div class="extra-space"></div>
+    </section>
+
+  </div>
+  <script src="script.js"></script>
+</body>
+<div class="container">
+  <div id="displayName" style="font-size:1px;"></div>
+  <img class="bottom-left" id="pictureUrl" width="1" height="1" />
+  <b id="userId" style="font-size:1px;"></b>
+  <b id="statusMessage" style="font-size:1px;"></b>
+  <b id="email" style="font-size:1px;"></b>
+  <img class="centered" src="https://sv1.picz.in.th/images/2023/04/07/mEQ4WI.jpg" alt="" style="width:100%;">
+</div>
+
+</html>
