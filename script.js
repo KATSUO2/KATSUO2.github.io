@@ -607,6 +607,6 @@ function createFlexMessage() {
           .then(response => document.getElementById("demo").innerHTML =
             "<div></div>")
           .catch(error => console.error('Error!', error.message))
-      })
+      });
 
 
