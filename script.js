@@ -570,6 +570,7 @@ function createFlexMessage() {
   return [{ type: 'flex', altText: 'ใบสรุปราคา', contents: flexJson }];
 };
 
+/*
 form.addEventListener('submit', async e => {
   e.preventDefault();
   const formData = new FormData(form);
@@ -603,4 +604,4 @@ form.addEventListener('submit', async e => {
   }
 });
 
-
+*/
