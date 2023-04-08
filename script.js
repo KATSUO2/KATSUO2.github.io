@@ -220,10 +220,7 @@ function displaySelectedProducts() {
   let tpr = document.getElementById('totalPrice').innerHTML;
   let mpr = document.getElementById('memberPrice').innerHTML;
   const dpn = document.getElementById('displayName').innerText;
-  const totalQty = products.reduce(
-    (accumulator, currentProduct) => accumulator + currentProduct.qty,
-    0
-  );
+  const totalQty = products.reduce((accumulator, currentProduct) => accumulator + currentProduct.qty,0);
 
   let flexJson = {
     type: 'bubble',
@@ -578,10 +575,7 @@ function createFlexMessage() {
       form.addEventListener('submit', e => {
         e.preventDefault()
         const formData = new FormData(form)
-        const qtyy = products.reduce(
-    (accumulator, currentProduct) => accumulator + currentProduct.qty,
-    0
-  );
+        const qtyy = products.reduce((accumulator, currentProduct) => accumulator + currentProduct.qty,0);
         let date = new Date();
         console.log(date.toLocaleString());
         const uuid = document.getElementById('userId').innerHTML;
