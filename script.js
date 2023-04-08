@@ -24,7 +24,7 @@ const code = document.getElementById('code');
 const friendShip = document.getElementById('friendShip');
 async function main() {
   // Initialize LIFF app)
-  await liff.init({ liffId: '1660714848-a5OJJ8vB' });
+  await liff.init({ liffId: '1660714848-LkYxxV1W' });
   // Try a LIFF function
   if (liff.isLoggedIn()) {
     const profile = await liff.getProfile();
@@ -54,7 +54,7 @@ async function getUserProfile() {
   document.getElementById('displayName').innerText = `Display Name: ${profile.displayName}`;
   document.getElementById('email').innerText = `Email: ${liff.getDecodedIDToken().email
     }`;
-}
+};
 
 $('.minus-btn').on('click', function(e) {
   e.preventDefault();
@@ -70,7 +70,7 @@ $('.minus-btn').on('click', function(e) {
 
   $input.val(value);
   calculatePrice();
-});
+})
 
 $('.plus-btn').on('click', function(e) {
   e.preventDefault();
@@ -86,7 +86,7 @@ $('.plus-btn').on('click', function(e) {
 
   $input.val(value);
   calculatePrice();
-});
+})
 
 $('.like-btn').on('click', function() {
   $(this).toggleClass('is-active');
@@ -172,7 +172,6 @@ function numberWithCommas(x) {
 }
 
 btnSend.onclick = () => {
-  //sentNotify();
   sendMsg();
 };
 
@@ -220,7 +219,10 @@ function displaySelectedProducts() {
   let tpr = document.getElementById('totalPrice').innerHTML;
   let mpr = document.getElementById('memberPrice').innerHTML;
   const dpn = document.getElementById('displayName').innerText;
-  const totalQty = products.reduce((accumulator, currentProduct) => accumulator + currentProduct.qty,0);
+  const totalQty = products.reduce(
+    (accumulator, currentProduct) => accumulator + currentProduct.qty,
+    0
+  );
 
   let flexJson = {
     type: 'bubble',
@@ -567,40 +569,36 @@ function createFlexMessage() {
   return [{ type: 'flex', altText: 'ใบสรุปราคา', contents: flexJson }];
 };
 
+const scriptURL = 'https://script.google.com/macros/s/AKfycbxEkY1punDoJNYCAKatomco6NUOpfj_iWvmXC7bzvLnoMC1ztRBcTG2q40vUes1g5GN/exec'
+const form = document.forms['contact']
 
+form.addEventListener('submit', e => {
+  e.preventDefault()
+  const formData = new FormData(form)
+  const qtyy = products.reduce(
+    (accumulator, currentProduct) => accumulator + currentProduct.qty, 0);
+  let date = new Date();
+  console.log(date.toLocaleString());
+  const uuid = document.getElementById('userId').innerHTML;
+  const dpnn = document.getElementById('displayName').innerHTML;
+  const stm = document.getElementById('statusMessage').innerHTML;
+  const emal = document.getElementById('email').innerHTML;
+  //const purl = document.getElementById('pictureUrl').innerHTML;
+  const tttp = document.getElementById('totalPrice').innerHTML;
+  const mbbp = document.getElementById('memberPrice').innerHTML;
 
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbx18X_PbVMVv4oxeSJuu7qCDdGzyRR5epqAjkTKE22phqdlXchureTgnZzfDe2HOuTqeQ/exec'
-      const form = document.forms['contact']
+  formData.set('Time', date);
+  formData.set('Uid', uuid);
+  formData.set('display_name', dpnn);
+  formData.set('statusMessage', stm);
+  formData.set('email', emal);
+  //formData.set('img_url', purl);
+  formData.set('total_Price', tttp);
+  formData.set('member_Price', mbbp);
+  formData.set('total_Qty', qtyy);
 
-      form.addEventListener('submit', e => {
-        e.preventDefault()
-        const formData = new FormData(form)
-        const qtyy = products.reduce((accumulator, currentProduct) => accumulator + currentProduct.qty,0);
-        let date = new Date();
-        console.log(date.toLocaleString());
-        const uuid = document.getElementById('userId').innerHTML;
-        const dpnn = document.getElementById('displayName').innerHTML;
-        const stm = document.getElementById('statusMessage').innerHTML;
-        const emal = document.getElementById('email').innerHTML;
-        //const purl = document.getElementById('pictureUrl').innerHTML;
-    
-        const tttp = document.getElementById('totalPrice').innerHTML;
-        const mbbp = document.getElementById('memberPrice').innerHTML;
-
-        formData.set('Time', date);
-        formData.set('Uid', uuid);
-        formData.set('display_name', dpnn);
-        formData.set('statusMessage', stm);
-        formData.set('email', emal);
-        //formData.set('img_url', purl);
-        formData.set('total_Price', tttp);
-        formData.set('member_Price', mbbp);
-        formData.set('total_Qty', qtyy);
-
-        fetch(scriptURL, {method: 'POST', body: formData})
-          .then(response => document.getElementById("demo").innerHTML =
-            "<div></div>")
-          .catch(error => console.error('Error!', error.message))
-      });
-
-
+  fetch(scriptURL, { method: 'POST', body: formData })
+    .then(response => document.getElementById("demo").innerHTML =
+      "<div></div>")
+    .catch(error => console.error('Error!', error.message))
+})
