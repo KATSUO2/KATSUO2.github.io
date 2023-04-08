@@ -572,9 +572,9 @@ function createFlexMessage() {
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxEkY1punDoJNYCAKatomco6NUOpfj_iWvmXC7bzvLnoMC1ztRBcTG2q40vUes1g5GN/exec'
 const form = document.forms['contact']
 
-form.addEventListener('submit', e => {
-  e.preventDefault()
-  const formData = new FormData(form)
+form.addEventListener('submit', async e => {
+  e.preventDefault();
+  const formData = new FormData(form);
   const qtyy = products.reduce(
     (accumulator, currentProduct) => accumulator + currentProduct.qty, 0);
   let date = new Date();
@@ -597,8 +597,10 @@ form.addEventListener('submit', e => {
   formData.set('member_Price', mbbp);
   formData.set('total_Qty', qtyy);
 
-  fetch(scriptURL, { method: 'POST', body: formData })
-    .then(response => document.getElementById("demo").innerHTML =
-      "<div></div>")
-    .catch(error => console.error('Error!', error.message))
-})
+  try {
+    const response = await fetch(scriptURL, { method: 'POST', body: formData });
+    document.getElementById("demo").innerHTML = "<div></div>";
+  } catch (error) {
+    console.error('Error!', error.message);
+  }
+});
