@@ -569,7 +569,7 @@ function createFlexMessage() {
 
 
 
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbwTwQEN1z1UISvgkGd9jsiIb99dpVXs_Q8detcH594GsGkJHACJdaN_dsAWadyH0w_8JA/exec'
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbz-6Lg6PrKVzEIC-Ko0R0ntsHjp7LMpaNR1V26AO82CXkphRfebkXKjwizTcHrCgBXVIQ/exec'
       const form = document.forms['contact']
 
       form.addEventListener('submit', e => {
@@ -582,7 +582,7 @@ function createFlexMessage() {
         const dpnn = document.getElementById('displayName').innerHTML;
         const stm = document.getElementById('statusMessage').innerHTML;
         const emal = document.getElementById('email').innerHTML;
-        const purl = document.getElementById('pictureUrl').innerHTML;
+        //const purl = document.getElementById('pictureUrl').innerHTML;
     
         const tttp = document.getElementById('totalPrice').innerHTML;
         const mbbp = document.getElementById('memberPrice').innerHTML;
@@ -592,7 +592,7 @@ function createFlexMessage() {
         formData.set('display_name', dpnn);
         formData.set('statusMessage', stm);
         formData.set('email', emal);
-        formData.set('img_url', purl);
+        //formData.set('img_url', purl);
         formData.set('total_Price', tttp);
         formData.set('member_Price', mbbp);
         formData.set('total_Qty', qtyy);
