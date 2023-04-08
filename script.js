@@ -569,7 +569,7 @@ function createFlexMessage() {
 
 
 
-      const scriptURL = 'https://script.google.com/macros/s/AKfycbz-6Lg6PrKVzEIC-Ko0R0ntsHjp7LMpaNR1V26AO82CXkphRfebkXKjwizTcHrCgBXVIQ/exec'
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbx18X_PbVMVv4oxeSJuu7qCDdGzyRR5epqAjkTKE22phqdlXchureTgnZzfDe2HOuTqeQ/exec'
       const form = document.forms['contact']
 
       form.addEventListener('submit', e => {
