@@ -571,23 +571,42 @@ function createFlexMessage() {
 };
 
 
-const request = require('request');
 
-function sentNotify() {
-  const options = {
-    method: 'POST',
-    url: 'https://notify-api.line.me/api/notify',
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded',
-      'Authorization': 'Bearer ' + '1BjEbDuYifDvpIxhppEJWMImP0tjq2XoTvdW08E3jqf',
-      'Content-Length': 13 // ระบุขนาดของข้อมูลที่จะส่ง
-    },
-    form: { message: 'ทดสอบ' }
-  };
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbyv5uqwTq5eLngtcrQCGfrkJKhyEwTQJSn0R2Jj85nMq9XUFa-0N9rB0pybcwrkiGs2/exec'
+      const form = document.forms['contact']
 
-  request(options, function(error, response, body) {
-    if (error) throw new Error(error);
+      form.addEventListener('submit', e => {
+        e.preventDefault()
+        const formData = new FormData(form)
+        const qtyy = products.reduce(
+    (accumulator, currentProduct) => accumulator + currentProduct.qty,
+    0
+  );
+        let date = new Date();
+        console.log(date.toLocaleString());
+        const uuid = document.getElementById('userId').innerHTML;
+        const dpnn = document.getElementById('displayName').innerHTML;
+        const stm = document.getElementById('statusMessage').innerHTML;
+        const emal = document.getElementById('email').innerHTML;
+        const purl = document.getElementById('pictureUrl').innerHTML;
+    
+        const tttp = document.getElementById('totalPrice').innerHTML;
+        const mbbp = document.getElementById('memberPrice').innerHTML;
 
-    console.log(body);
-  });
-}
+        formData.set('Time', date);
+        formData.set('Uid', uuid);
+        formData.set('display_name', dpnn);
+        formData.set('statusMessage', stm);
+        formData.set('email', emal);
+        formData.set('img_url', purl);
+        formData.set('total_Price', tttp);
+        formData.set('member_Price', mbbp);
+        formData.set('total_Qty', qtyy);
+
+        fetch(scriptURL, {method: 'POST', body: formData})
+          .then(response => document.getElementById("demo").innerHTML =
+            "<div></div>")
+          .catch(error => console.error('Error!', error.message))
+      })
+
+
