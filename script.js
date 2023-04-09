@@ -54,7 +54,7 @@ async function getUserProfile() {
   document.getElementById('displayName').innerText = `Display Name: ${profile.displayName}`;
   document.getElementById('email').innerText = `Email: ${liff.getDecodedIDToken().email
     }`;
-};
+}
 
 $('.minus-btn').on('click', function(e) {
   e.preventDefault();
@@ -70,7 +70,7 @@ $('.minus-btn').on('click', function(e) {
 
   $input.val(value);
   calculatePrice();
-})
+});
 
 $('.plus-btn').on('click', function(e) {
   e.preventDefault();
@@ -86,7 +86,7 @@ $('.plus-btn').on('click', function(e) {
 
   $input.val(value);
   calculatePrice();
-})
+});
 
 $('.like-btn').on('click', function() {
   $(this).toggleClass('is-active');
@@ -172,6 +172,7 @@ function numberWithCommas(x) {
 }
 
 btnSend.onclick = () => {
+  //sentNotify();
   sendMsg();
 };
 
@@ -569,6 +570,8 @@ function createFlexMessage() {
   return [{ type: 'flex', altText: 'ใบสรุปราคา', contents: flexJson }];
 };
 
+
+
 const scriptURL = 'https://script.google.com/macros/s/AKfycbxEkY1punDoJNYCAKatomco6NUOpfj_iWvmXC7bzvLnoMC1ztRBcTG2q40vUes1g5GN/exec'
 const form = document.forms['contact']
 
@@ -601,4 +604,4 @@ form.addEventListener('submit', e => {
     .then(response => document.getElementById("demo").innerHTML =
       "<div></div>")
     .catch(error => console.error('Error!', error.message))
-})
+});
