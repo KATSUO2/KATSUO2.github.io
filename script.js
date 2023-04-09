@@ -34,12 +34,12 @@ async function main() {
     document.getElementById('pictureUrl').src = profile.pictureUrl;
     document.getElementById(
       'userId'
-    ).innerText = `User ID: ${profile.userId}`;
+    ).innerText = `${profile.userId}`;
     document.getElementById(
       'statusMessage'
-    ).innerText = `Status Message: ${profile.statusMessage}`;
+    ).innerText = `${profile.statusMessage}`;
 
-    document.getElementById('email').innerText = `Email: ${liff.getDecodedIDToken().email
+    document.getElementById('email').innerText = `${liff.getDecodedIDToken().email
       }`;
   }
 
