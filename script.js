@@ -49,10 +49,10 @@ main();
 async function getUserProfile() {
   const profile = await liff.getProfile();
   document.getElementById('pictureUrl').src = profile.pictureUrl;
-  document.getElementById('userId').innerText = `User ID: ${profile.userId}`;
-  document.getElementById('statusMessage').innerText = `Status Message: ${profile.statusMessage}`;
-  document.getElementById('displayName').innerText = `Display Name: ${profile.displayName}`;
-  document.getElementById('email').innerText = `Email: ${liff.getDecodedIDToken().email
+  document.getElementById('userId').innerText = `U${profile.userId}`;
+  document.getElementById('statusMessage').innerText = `${profile.statusMessage}`;
+  document.getElementById('displayName').innerText = `${profile.displayName}`;
+  document.getElementById('email').innerText = `E${liff.getDecodedIDToken().email
     }`;
 }
 
