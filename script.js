@@ -24,7 +24,7 @@ const code = document.getElementById('code');
 const friendShip = document.getElementById('friendShip');
 async function main() {
   // Initialize LIFF app)
-  await liff.init({ liffId: '1660714848-LkYxxV1W' });
+  await liff.init({ liffId: '1660714848-a5OJJ8vB' });
   // Try a LIFF function
   if (liff.isLoggedIn()) {
     const profile = await liff.getProfile();
