@@ -589,6 +589,18 @@ form.addEventListener('submit', e => {
   //const purl = document.getElementById('pictureUrl').innerHTML;
   const tttp = document.getElementById('totalPrice').innerHTML;
   const mbbp = document.getElementById('memberPrice').innerHTML;
+  const qt1 = document.getElementsByName('quantity1')[0].value * 1;  //revi
+  const qt2 = document.getElementsByName('quantity2')[0].value * 1;  //cal
+  const qt3 = document.getElementsByName('quantity3')[0].value * 1;  //vero
+  const qt4 = document.getElementsByName('quantity4')[0].value * 1;  //age
+  const qt5 = document.getElementsByName('quantity5')[0].value * 1;  //dark
+  const qt6 = document.getElementsByName('quantity6')[0].value * 1;  //gel
+  const qt7 = document.getElementsByName('quantity7')[0].value * 1;  //pre
+  const qt8 = document.getElementsByName('quantity8')[0].value * 1;  //sun
+  const qt9 = document.getElementsByName('quantity9')[0].value * 1;  //black
+  const qt10 = document.getElementsByName('quantity10')[0].value * 1;  //body
+  const qt11 = document.getElementsByName('quantity11')[0].value * 1;  //coco
+  const qt12 = document.getElementsByName('quantity12')[0].value * 1;  //melon
 
   formData.set('Time', date);
   formData.set('Uid', uuid);
@@ -599,6 +611,18 @@ form.addEventListener('submit', e => {
   formData.set('total_Price', tttp);
   formData.set('member_Price', mbbp);
   formData.set('total_Qty', qtyy);
+  formData.set('revi', qt1); 
+  formData.set('cal', qt2); 
+  formData.set('vero', qt3); 
+  formData.set('age', qt4); 
+  formData.set('dark', qt5); 
+  formData.set('gel', qt6); 
+  formData.set('pre', qt7); 
+  formData.set('sun', qt8); 
+  formData.set('black', qt9); 
+  formData.set('body', qt10); 
+  formData.set('coco', qt11); 
+  formData.set('melon', qt12); 
 
   fetch(scriptURL, { method: 'POST', body: formData })
     .then(response => document.getElementById("demo").innerHTML =
