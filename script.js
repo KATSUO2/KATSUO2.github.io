@@ -96,44 +96,45 @@ $('.like-btn').on('click', function() {
 //document.getElementById("qtydown").src = "https://designmodo.com/demo/shopping-cart/minus.svg"
 
 document.getElementById('productImage1').src =
-  'https://www.medileen.com/image/product/product10_600.png';
+  'https://sv1.picz.in.th/images/2023/04/21/ySxNig.jpg';
 document.getElementById('productImage2').src =
-  'https://www.medileen.com/image/product/product26_600.jpg';
+  'https://sv1.picz.in.th/images/2023/04/21/ySxw5J.jpg';
 document.getElementById('productImage3').src =
-  'https://www.medileen.com/image/product/product16_600.jpg';
+  'https://sv1.picz.in.th/images/2023/04/21/ySx3oy.jpg';
 document.getElementById('productImage4').src =
-  'https://www.medileen.com/image/product/product23_600.jpg';
+  'https://sv1.picz.in.th/images/2023/04/21/ySx4Sn.jpg';
 document.getElementById('productImage5').src =
-  'https://www.medileen.com/image/product/product2_600.jpg';
+  'https://sv1.picz.in.th/images/2023/04/21/ySx9JD.jpg';
 document.getElementById('productImage6').src =
-  'https://www.medileen.com/image/product/product15_600.jpg';
+  'https://sv1.picz.in.th/images/2023/04/21/ySxS5Q.jpg';
 document.getElementById('productImage7').src =
-  'https://www.medileen.com/image/product/product18_600.jpg';
+  'https://sv1.picz.in.th/images/2023/04/21/ySxBuW.jpg';
 document.getElementById('productImage8').src =
-  'https://www.medileen.com/image/product/product12_600.jpg';
+  'https://sv1.picz.in.th/images/2023/04/21/ySxfI2.jpg';
 document.getElementById('productImage9').src =
-  'https://www.medileen.com/image/product/product13_600.png';
+  'https://sv1.picz.in.th/images/2023/04/21/ySx7fV.jpg';
 document.getElementById('productImage10').src =
-  'https://www.medileen.com/image/product/product31_600.jpeg';
+  'https://sv1.picz.in.th/images/2023/04/21/ySxth9.jpg';
 document.getElementById('productImage11').src =
-  'https://www.medileen.com/image/product/product29_600.png';
+  'https://sv1.picz.in.th/images/2023/04/21/ySxYVS.jpg';
 document.getElementById('productImage12').src =
-  'https://www.medileen.com/image/product/product30_600.png';
+  'https://sv1.picz.in.th/images/2023/04/21/ySxkw1.jpg';
 
 const products = [
-  { id: 'm01', name: 'Revive Factor Plus+', price: 2750, qty: 0, pdp: 0 },
-  { id: 'm02', name: 'Calleaf 24', price: 1450, qty: 0, pdp: 0 },
-  { id: 'm03', name: 'Veronika Plus+', price: 1950, qty: 0, pdp: 0 },
-  { id: 'm04', name: 'Age Recovery Cream', price: 1450, qty: 0, pdp: 0 },
-  { id: 'm05', name: 'Dark Spot Corrector', price: 1750, qty: 0, pdp: 0 },
-  { id: 'm06', name: 'Hydrating Gel Cleanser', price: 750, qty: 0, pdp: 0 },
-  { id: 'm07', name: 'Prerotic Plus Probiotic', price: 1050, qty: 0, pdp: 0 },
-  { id: 'm08', name: 'Sun Screen Protection SPF50 PA+++', price: 800, qty: 0, pdp: 0, },
-  { id: 'm09', name: 'Black Mud Cleansing Balm Plus', price: 850, qty: 0, pdp: 0, },
-  { id: 'm10', name: 'THE BODY SERIE', price: 1756, qty: 0, pdp: 0 },
-  { id: 'm11', name: 'Plant Protein42', price: 1050, qty: 0, pdp: 0 },
-  { id: 'm12', name: 'Shake Melon Flavour', price: 1050, qty: 0, pdp: 0 },
+  { id: 'm01', name: 'Calleaf 24', price: 1450, qty: 0, pdp: 0, ps: '฿ 1,450' },
+  { id: 'm02', name: 'Veronika Plus+', price: 1950, qty: 0, pdp: 0, ps: '฿ 1,950' },
+  { id: 'm03', name: 'Prerotic Plus Probiotic', price: 1050, qty: 0, pdp: 0, ps: '฿ 1,050' },
+  { id: 'm04', name: 'BWELL 24', price: 1750, qty: 0, pdp: 0, ps: '฿ 1,750' },
+  { id: 'm05', name: 'Revive Factor Plus+', price: 2750, qty: 0, pdp: 0, ps: '฿ 2,750' },
+  { id: 'm06', name: 'Age Recovery Cream', price: 1450, qty: 0, pdp: 0, ps: '฿ 1,450' },
+  { id: 'm07', name: 'Dark Spot Corrector', price: 1750, qty: 0, pdp: 0, ps: '฿ 1,750' },
+  { id: 'm08', name: 'Hydrating Gel Cleanser', price: 750, qty: 0, pdp: 0, ps: '฿ 750' },
+  { id: 'm09', name: 'Black Mud Cleansing Balm Plus', price: 850, qty: 0, pdp: 0, ps: '฿ 850' },
+  { id: 'm10', name: 'Sun Screen Protection SPF50 PA+++', price: 800, qty: 0, pdp: 0, ps: '฿ 800' },
+  { id: 'm11', name: 'THE BODY SERIE', price: 1756, qty: 0, pdp: 0, ps: '฿ 1,756' },
+  { id: 'm12', name: 'Shake Melon Flavour', price: 1050, qty: 0, pdp: 0, ps: '฿ 1,050' },
 ];
+
 
 function calculatePrice() {
   let totalPrice = 0;
@@ -153,9 +154,12 @@ function calculatePrice() {
 }
 
 products.forEach((product) => {
-  const el = document.getElementById(`productName${product.id.slice(1)}`);
-  if (el) {
-    el.textContent = product.name;
+  const elName = document.getElementById(`productName${product.id.slice(1)}`);
+  const elPs = document.getElementById(`productPs${product.id.slice(1)}`);
+
+  if (elName && elPs) {
+    elName.textContent = product.name;
+    elPs.textContent = product.ps;
   }
 });
 
