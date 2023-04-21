@@ -615,18 +615,18 @@ form.addEventListener('submit', e => {
   formData.set('total_Price', tttp);
   formData.set('member_Price', mbbp);
   formData.set('total_Qty', qtyy);
-  formData.set('revi', qt1); 
-  formData.set('cal', qt2); 
-  formData.set('vero', qt3); 
-  formData.set('age', qt4); 
-  formData.set('dark', qt5); 
-  formData.set('gel', qt6); 
-  formData.set('pre', qt7); 
-  formData.set('sun', qt8); 
-  formData.set('black', qt9); 
-  formData.set('body', qt10); 
-  formData.set('coco', qt11); 
-  formData.set('melon', qt12); 
+  formData.set('cal', qt1);
+  formData.set('vero', qt2);
+  formData.set('pre', qt3);
+  formData.set('bwell', qt4);
+  formData.set('revi', qt5);
+  formData.set('age', qt6);
+  formData.set('dark', qt7);
+  formData.set('gel', qt8);
+  formData.set('black', qt9);
+  formData.set('sun', qt10);
+  formData.set('body', qt11);
+  formData.set('melon', qt12);
 
   fetch(scriptURL, { method: 'POST', body: formData })
     .then(response => document.getElementById("demo").innerHTML =
